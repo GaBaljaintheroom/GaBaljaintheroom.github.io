@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 982" width="760" font-family="sans-serif">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9e9e9e"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="380.0" y="34" text-anchor="middle" font-size="21" font-weight="bold" fill="#222">ECIES 암호화 (송신자)</text>
+<text x="380.0" y="58" text-anchor="middle" font-size="14" fill="#666">수신자의 공개키만으로 수신자만 열 수 있는 암호문을 만든다</text>
+<rect x="20" y="105.0" width="96" height="28" rx="14" fill="#616161"/>
+<text x="68.0" y="124.0" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">준비</text>
+<rect x="130" y="80" width="600" height="78" rx="10" fill="#f5f5f5" stroke="#616161" stroke-width="2"/>
+<circle cx="160" cy="119.0" r="16" fill="#616161"/>
+<text x="160" y="125.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">1</text>
+<text x="190" y="105" font-size="16" font-weight="bold" fill="#222">수신자의 공개키 K_R 확보</text>
+<text x="190" y="128" font-size="15" fill="#616161" font-family="Menlo, Consolas, monospace">K_R = k_R · G</text>
+<text x="190" y="148" font-size="12.5" fill="#666">수신자 인증서에 들어 있는 암호화용 공개키 (k_R은 수신자만 앎)</text>
+<line x1="430.0" y1="161" x2="430.0" y2="187" stroke="#9e9e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="20" y="217.0" width="96" height="28" rx="14" fill="#1565c0"/>
+<text x="68.0" y="236.0" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">ECDH</text>
+<rect x="130" y="192" width="600" height="78" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<circle cx="160" cy="231.0" r="16" fill="#1565c0"/>
+<text x="160" y="237.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">2</text>
+<text x="190" y="217" font-size="16" font-weight="bold" fill="#222">일회용 임시 키 쌍 생성</text>
+<text x="190" y="240" font-size="15" fill="#1565c0" font-family="Menlo, Consolas, monospace">개인키 v (난수),  공개키 V = v · G</text>
+<text x="190" y="260" font-size="12.5" fill="#666">매번 새로 만들고, v는 사용 후 폐기</text>
+<line x1="430.0" y1="273" x2="430.0" y2="299" stroke="#9e9e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="20" y="329.0" width="96" height="28" rx="14" fill="#1565c0"/>
+<text x="68.0" y="348.0" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">ECDH</text>
+<rect x="130" y="304" width="600" height="78" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<circle cx="160" cy="343.0" r="16" fill="#1565c0"/>
+<text x="160" y="349.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">3</text>
+<text x="190" y="329" font-size="16" font-weight="bold" fill="#222">공유 비밀값 계산</text>
+<text x="190" y="352" font-size="15" fill="#1565c0" font-family="Menlo, Consolas, monospace">S = (v · K_R) 의 x 좌표</text>
+<text x="190" y="372" font-size="12.5" fill="#666">= v · k_R · G → 수신자도 같은 값을 계산할 수 있음</text>
+<line x1="430.0" y1="385" x2="430.0" y2="411" stroke="#9e9e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="20" y="441.0" width="96" height="28" rx="14" fill="#6a1b9a"/>
+<text x="68.0" y="460.0" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">KDF</text>
+<rect x="130" y="416" width="600" height="78" rx="10" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2"/>
+<circle cx="160" cy="455.0" r="16" fill="#6a1b9a"/>
+<text x="160" y="461.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">4</text>
+<text x="190" y="441" font-size="16" font-weight="bold" fill="#222">공유 비밀값으로 키 2개 만들기</text>
+<text x="190" y="464" font-size="15" fill="#6a1b9a" font-family="Menlo, Consolas, monospace">KDF(S, P1)  →  K_enc ‖ K_mac</text>
+<text x="190" y="484" font-size="12.5" fill="#666">S를 균일한 키로 바꾸고, 암호화용·MAC용으로 분리</text>
+<line x1="430.0" y1="497" x2="430.0" y2="523" stroke="#9e9e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="20" y="553.0" width="96" height="28" rx="14" fill="#ef6c00"/>
+<text x="68.0" y="572.0" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">키 보호</text>
+<rect x="130" y="528" width="600" height="78" rx="10" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+<circle cx="160" cy="567.0" r="16" fill="#ef6c00"/>
+<text x="160" y="573.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">5</text>
+<text x="190" y="553" font-size="16" font-weight="bold" fill="#222">데이터용 AES 키를 만들고 감싸기</text>
+<text x="190" y="576" font-size="15" fill="#ef6c00" font-family="Menlo, Consolas, monospace">C = AES 키 ⊕ K_enc</text>
+<text x="190" y="596" font-size="12.5" fill="#666">실제 데이터를 암호화할 AES-128 키를 랜덤 생성 후 숨김</text>
+<line x1="430.0" y1="609" x2="430.0" y2="635" stroke="#9e9e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="20" y="665.0" width="96" height="28" rx="14" fill="#c62828"/>
+<text x="68.0" y="684.0" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">MAC</text>
+<rect x="130" y="640" width="600" height="78" rx="10" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+<circle cx="160" cy="679.0" r="16" fill="#c62828"/>
+<text x="160" y="685.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">6</text>
+<text x="190" y="665" font-size="16" font-weight="bold" fill="#222">감싼 키에 위변조 방지 태그 붙이기</text>
+<text x="190" y="688" font-size="15" fill="#c62828" font-family="Menlo, Consolas, monospace">T = HMAC-SHA256(K_mac, C)</text>
+<text x="190" y="708" font-size="12.5" fill="#666">16 byte로 잘라 사용, C가 바뀌면 T가 맞지 않음</text>
+<line x1="430.0" y1="721" x2="430.0" y2="747" stroke="#9e9e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="20" y="777.0" width="96" height="28" rx="14" fill="#2e7d32"/>
+<text x="68.0" y="796.0" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">AES-CCM</text>
+<rect x="130" y="752" width="600" height="78" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+<circle cx="160" cy="791.0" r="16" fill="#2e7d32"/>
+<text x="160" y="797.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">7</text>
+<text x="190" y="777" font-size="16" font-weight="bold" fill="#222">실제 데이터 암호화</text>
+<text x="190" y="800" font-size="15" fill="#2e7d32" font-family="Menlo, Consolas, monospace">AES-128-CCM(AES 키, Nonce, 평문)</text>
+<text x="190" y="820" font-size="12.5" fill="#666">→ 암호문 + 인증 태그 (기밀성 + 무결성)</text>
+<line x1="430.0" y1="833" x2="430.0" y2="859" stroke="#9e9e9e" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="20" y="889.0" width="96" height="28" rx="14" fill="#37474f"/>
+<text x="68.0" y="908.0" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">전송</text>
+<rect x="130" y="864" width="600" height="78" rx="10" fill="#eceff1" stroke="#37474f" stroke-width="2"/>
+<circle cx="160" cy="903.0" r="16" fill="#37474f"/>
+<text x="160" y="909.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">8</text>
+<text x="190" y="889" font-size="16" font-weight="bold" fill="#222">수신자에게 전송</text>
+<text x="190" y="912" font-size="15" fill="#37474f" font-family="Menlo, Consolas, monospace">V,  C,  T,  Nonce,  암호문</text>
+<text x="190" y="932" font-size="12.5" fill="#666">v, S, K_enc, K_mac, AES 키는 보내지 않음</text>
+</svg>

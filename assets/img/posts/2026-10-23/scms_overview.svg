@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1426" width="1100" font-family="sans-serif">
+<defs><marker id="k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#424242"/></marker></defs>
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="550.0" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#222">SCMS 익명 인증서 발급에서 사용되는 알고리즘</text>
+<rect x="97.0" y="58" width="56.0" height="20" rx="10" fill="#1565c0"/>
+<text x="125.0" y="72" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">ECDSA</text>
+<text x="175.0" y="73" font-size="13" fill="#444">서명 · 검증 (누가 보냈는지, 변조 여부)</text>
+<rect x="427.0" y="58" width="56.0" height="20" rx="10" fill="#ef6c00"/>
+<text x="455.0" y="72" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">ECIES</text>
+<text x="505.0" y="73" font-size="13" fill="#444">암호화 (ECDH + KDF + AES-CCM)</text>
+<rect x="741.8" y="58" width="86.4" height="20" rx="10" fill="#2e7d32"/>
+<text x="785.0" y="72" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Butterfly</text>
+<text x="835.0" y="73" font-size="13" fill="#444">키 확장 · 익명성</text>
+<rect x="36.0" y="104" width="248" height="1086" rx="12" fill="#efebe9" opacity="0.6"/>
+<rect x="42.0" y="112" width="236" height="32" rx="16" fill="#5d4037"/>
+<text x="160.0" y="133" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">ECA (등록 인증서 발급)</text>
+<rect x="296.0" y="104" width="248" height="1086" rx="12" fill="#eceff1" opacity="0.6"/>
+<rect x="302.0" y="112" width="236" height="32" rx="16" fill="#37474f"/>
+<text x="420.0" y="133" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">차량 (OBE)</text>
+<rect x="556.0" y="104" width="248" height="1086" rx="12" fill="#f3e5f5" opacity="0.6"/>
+<rect x="562.0" y="112" width="236" height="32" rx="16" fill="#6a1b9a"/>
+<text x="680.0" y="133" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">RA (등록 기관)</text>
+<rect x="816.0" y="104" width="248" height="1086" rx="12" fill="#e0f2f1" opacity="0.6"/>
+<rect x="822.0" y="112" width="236" height="32" rx="16" fill="#00695c"/>
+<text x="940.0" y="133" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">PCA / ACA (익명 인증서 발급)</text>
+<rect x="42.0" y="154" width="236" height="104" rx="10" fill="#fff" stroke="#5d4037" stroke-width="2"/>
+<text x="160.0" y="177" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#222">0. 등록 인증서 발급</text>
+<rect x="132.0" y="186" width="56.0" height="20" rx="10" fill="#1565c0"/>
+<text x="160.0" y="200" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">ECDSA</text>
+<text x="160.0" y="226" text-anchor="middle" font-size="12.5" fill="#444">차량 공개키에 ECA가 서명</text>
+<text x="160.0" y="244" text-anchor="middle" font-size="12.5" fill="#444">→ 차량의 &#x27;신분증&#x27; 역할</text>
+<line x1="184.0" y1="294" x2="396.0" y2="294" stroke="#424242" stroke-width="2.5" marker-end="url(#k)"/>
+<text x="290.0" y="285" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#424242" paint-order="stroke" stroke="#fff" stroke-width="5">등록 인증서</text>
+<rect x="302.0" y="312" width="236" height="122" rx="10" fill="#fff" stroke="#37474f" stroke-width="2"/>
+<text x="420.0" y="335" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#222">1. 인증서 요청 생성</text>
+<rect x="314.8" y="344" width="86.4" height="20" rx="10" fill="#2e7d32"/>
+<text x="358.0" y="358" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Butterfly</text>
+<rect x="407.2" y="344" width="56.0" height="20" rx="10" fill="#1565c0"/>
+<text x="435.2" y="358" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">ECDSA</text>
+<rect x="469.2" y="344" width="56.0" height="20" rx="10" fill="#ef6c00"/>
+<text x="497.2" y="358" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">ECIES</text>
+<text x="420.0" y="384" text-anchor="middle" font-size="12.5" fill="#444">Caterpillar 키 A, P, ck, ek 생성</text>
+<text x="420.0" y="402" text-anchor="middle" font-size="12.5" fill="#444">등록 인증서 키로 요청에 서명</text>
+<text x="420.0" y="420" text-anchor="middle" font-size="12.5" fill="#444">RA 공개키로 요청을 암호화</text>
+<line x1="444.0" y1="470" x2="656.0" y2="470" stroke="#424242" stroke-width="2.5" marker-end="url(#k)"/>
+<text x="550.0" y="461" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#424242" paint-order="stroke" stroke="#fff" stroke-width="5">① 요청 (단 1번)</text>
+<rect x="562.0" y="488" width="236" height="122" rx="10" fill="#fff" stroke="#6a1b9a" stroke-width="2"/>
+<text x="680.0" y="511" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#222">2. 요청 확인 · 확장</text>
+<rect x="574.8" y="520" width="56.0" height="20" rx="10" fill="#ef6c00"/>
+<text x="602.8" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">ECIES</text>
+<rect x="636.8" y="520" width="56.0" height="20" rx="10" fill="#1565c0"/>
+<text x="664.8" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">ECDSA</text>
+<rect x="698.8" y="520" width="86.4" height="20" rx="10" fill="#2e7d32"/>
+<text x="742.0" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Butterfly</text>
+<text x="680.0" y="560" text-anchor="middle" font-size="12.5" fill="#444">복호화 후 차량 서명 검증</text>
+<text x="680.0" y="578" text-anchor="middle" font-size="12.5" fill="#444">Cocoon 키 B_i, Q_i 를 n개 생성</text>
+<text x="680.0" y="596" text-anchor="middle" font-size="12.5" fill="#444">여러 차량의 요청을 섞음</text>
+<line x1="704.0" y1="646" x2="916.0" y2="646" stroke="#424242" stroke-width="2.5" marker-end="url(#k)"/>
+<text x="810.0" y="637" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#424242" paint-order="stroke" stroke="#fff" stroke-width="5">② B_i, Q_i (차량 신원 없음)</text>
+<rect x="822.0" y="664" width="236" height="104" rx="10" fill="#fff" stroke="#00695c" stroke-width="2"/>
+<text x="940.0" y="687" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#222">3. 익명 인증서 발급</text>
+<rect x="865.8" y="696" width="86.4" height="20" rx="10" fill="#2e7d32"/>
+<text x="909.0" y="710" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Butterfly</text>
+<rect x="958.2" y="696" width="56.0" height="20" rx="10" fill="#1565c0"/>
+<text x="986.2" y="710" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">ECDSA</text>
+<text x="940.0" y="736" text-anchor="middle" font-size="12.5" fill="#444">U_i = B_i + c_i·G</text>
+<text x="940.0" y="754" text-anchor="middle" font-size="12.5" fill="#444">인증서에 PCA가 서명</text>
+<rect x="822.0" y="780" width="236" height="104" rx="10" fill="#fff" stroke="#00695c" stroke-width="2"/>
+<text x="940.0" y="803" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#222">4. Cocoon Encryption</text>
+<rect x="912.0" y="812" width="56.0" height="20" rx="10" fill="#ef6c00"/>
+<text x="940.0" y="826" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">ECIES</text>
+<text x="940.0" y="852" text-anchor="middle" font-size="12.5" fill="#444">Q_i 로 (인증서, c_i) 암호화</text>
+<text x="940.0" y="870" text-anchor="middle" font-size="12.5" fill="#444">→ 차량만 열 수 있음</text>
+<line x1="916.0" y1="920" x2="704.0" y2="920" stroke="#424242" stroke-width="2.5" marker-end="url(#k)"/>
+<text x="810.0" y="911" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#424242" paint-order="stroke" stroke="#fff" stroke-width="5">③ 암호화된 응답</text>
+<rect x="562.0" y="938" width="236" height="60" rx="10" fill="#fff" stroke="#6a1b9a" stroke-width="2"/>
+<text x="680.0" y="961" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#222">5. 보관 후 전달</text>
+<text x="680.0" y="984" text-anchor="middle" font-size="12.5" fill="#444">응답 내용은 열어볼 수 없음</text>
+<line x1="656.0" y1="1034" x2="444.0" y2="1034" stroke="#424242" stroke-width="2.5" marker-end="url(#k)"/>
+<text x="550.0" y="1025" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#424242" paint-order="stroke" stroke="#fff" stroke-width="5">④ 인증서 다운로드</text>
+<rect x="302.0" y="1052" width="236" height="122" rx="10" fill="#fff" stroke="#37474f" stroke-width="2"/>
+<text x="420.0" y="1075" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#222">6. 개인키 계산 · 검증</text>
+<rect x="314.8" y="1084" width="56.0" height="20" rx="10" fill="#ef6c00"/>
+<text x="342.8" y="1098" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">ECIES</text>
+<rect x="376.8" y="1084" width="86.4" height="20" rx="10" fill="#2e7d32"/>
+<text x="420.0" y="1098" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Butterfly</text>
+<rect x="469.2" y="1084" width="56.0" height="20" rx="10" fill="#1565c0"/>
+<text x="497.2" y="1098" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">ECDSA</text>
+<text x="420.0" y="1124" text-anchor="middle" font-size="12.5" fill="#444">q_i 로 복호화 → c_i 획득</text>
+<text x="420.0" y="1142" text-anchor="middle" font-size="12.5" fill="#444">u_i = a + f1(ck,i) + c_i</text>
+<text x="420.0" y="1160" text-anchor="middle" font-size="12.5" fill="#444">u_i·G == U_i, PCA 서명 확인</text>
+<text x="550.0" y="1236" text-anchor="middle" font-size="18" font-weight="bold" fill="#222">발급 후 : 차량 간 통신 (V2V)</text>
+<rect x="100.0" y="1254" width="400" height="112" rx="10" fill="#fff" stroke="#37474f" stroke-width="2"/>
+<text x="300.0" y="1278" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">차량 A : BSM 전송</text>
+<rect x="272.0" y="1288" width="56.0" height="20" rx="10" fill="#1565c0"/>
+<text x="300.0" y="1302" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">ECDSA</text>
+<text x="300.0" y="1330" text-anchor="middle" font-size="13" fill="#444">익명 개인키 u_i 로 메시지에 서명</text>
+<text x="300.0" y="1348" text-anchor="middle" font-size="13" fill="#444">+ 익명 인증서(U_i) 첨부</text>
+<rect x="600.0" y="1254" width="400" height="112" rx="10" fill="#fff" stroke="#37474f" stroke-width="2"/>
+<text x="800.0" y="1278" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">차량 B : BSM 수신</text>
+<rect x="772.0" y="1288" width="56.0" height="20" rx="10" fill="#1565c0"/>
+<text x="800.0" y="1302" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">ECDSA</text>
+<text x="800.0" y="1330" text-anchor="middle" font-size="13" fill="#444">인증서 체인 검증 (PCA → Root CA)</text>
+<text x="800.0" y="1348" text-anchor="middle" font-size="13" fill="#444">인증서의 U_i 로 서명 검증</text>
+<line x1="506.0" y1="1310.0" x2="594.0" y2="1310.0" stroke="#424242" stroke-width="2.5" marker-end="url(#k)"/>
+<text x="550.0" y="1300.0" text-anchor="middle" font-size="13" font-weight="bold" fill="#424242">브로드캐스트</text>
+<rect x="256.8" y="1381" width="86.4" height="20" rx="10" fill="#2e7d32"/>
+<text x="300.0" y="1395" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Butterfly</text>
+<text x="350.0" y="1396" font-size="13.5" fill="#444">시간마다 다른 익명 인증서로 교체 → 같은 차량인지 추적할 수 없음</text>
+</svg>
