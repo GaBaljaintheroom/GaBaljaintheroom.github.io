@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+  <style>
+    .t { font-size: 15px; font-weight: 700; fill: #1f3a5f; }
+    .s { font-size: 12.5px; fill: #44546a; }
+    .p { font-family: Menlo, Consolas, monospace; font-size: 11px; fill: #6b7c93; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a78b5"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="920" height="220" rx="12" fill="#ffffff"/>
+
+  <rect x="20" y="40" width="156" height="110" rx="8" fill="#f5f8fc" stroke="#9fb3cc"/>
+  <text x="98" y="88" class="t" text-anchor="middle">SPDU 수신</text>
+  <text x="98" y="110" class="s" text-anchor="middle">통신 스택 → SDEE</text>
+
+  <rect x="200" y="40" width="156" height="110" rx="8" fill="#ffffff" stroke="#4a78b5" stroke-width="1.5"/>
+  <text x="278" y="70" class="t" text-anchor="middle">① 전처리</text>
+  <text x="278" y="96" class="s" text-anchor="middle">유형 · PSID · 시각 추출</text>
+  <text x="278" y="116" class="s" text-anchor="middle">P2PCD 등 관리 정보</text>
+  <text x="278" y="136" class="s" text-anchor="middle">→ 처리할지 결정</text>
+
+  <rect x="380" y="40" width="156" height="110" rx="8" fill="#ffffff" stroke="#4a78b5" stroke-width="1.5"/>
+  <text x="458" y="70" class="t" text-anchor="middle">② 서명 검증</text>
+  <text x="458" y="96" class="s" text-anchor="middle">검증 키 확보</text>
+  <text x="458" y="116" class="s" text-anchor="middle">해시 재계산</text>
+  <text x="458" y="136" class="s" text-anchor="middle">ECDSA 검증</text>
+
+  <rect x="560" y="40" width="156" height="110" rx="8" fill="#ffffff" stroke="#4a78b5" stroke-width="1.5"/>
+  <text x="638" y="70" class="t" text-anchor="middle">③ 유효성 판단</text>
+  <text x="638" y="96" class="s" text-anchor="middle">일관성 조건</text>
+  <text x="638" y="116" class="s" text-anchor="middle">관련성 조건</text>
+  <text x="638" y="136" class="s" text-anchor="middle">핵심 필드 해석</text>
+
+  <rect x="740" y="40" width="156" height="50" rx="8" fill="#e6f4ea" stroke="#2e7d4f" stroke-width="1.5"/>
+  <text x="818" y="62" class="t" text-anchor="middle" style="fill:#2e7d4f">valid</text>
+  <text x="818" y="80" class="s" text-anchor="middle">SDEE가 PDU 사용</text>
+  <rect x="740" y="100" width="156" height="50" rx="8" fill="#fdecea" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="818" y="122" class="t" text-anchor="middle" style="fill:#c0392b">invalid</text>
+  <text x="818" y="140" class="s" text-anchor="middle">폐기 + 무효 사유 1개</text>
+
+  <line x1="176" y1="95" x2="198" y2="95" stroke="#4a78b5" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="356" y1="95" x2="378" y2="95" stroke="#4a78b5" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="536" y1="95" x2="558" y2="95" stroke="#4a78b5" stroke-width="2" marker-end="url(#a)"/>
+  <polyline points="716,95 728,95 728,65 738,65" fill="none" stroke="#4a78b5" stroke-width="2" marker-end="url(#a)"/>
+  <polyline points="728,95 728,125 738,125" fill="none" stroke="#4a78b5" stroke-width="2" marker-end="url(#a)"/>
+
+  <line x1="200" y1="172" x2="356" y2="172" stroke="#9fb3cc"/>
+  <text x="278" y="192" class="p" text-anchor="middle">Sec-SecureDataPreprocessing</text>
+  <line x1="380" y1="172" x2="716" y2="172" stroke="#9fb3cc"/>
+  <text x="548" y="192" class="p" text-anchor="middle">Sec-SignedDataVerification</text>
+</svg>

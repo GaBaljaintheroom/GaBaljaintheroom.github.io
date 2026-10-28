@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+  <style>
+    .h { font-size: 15px; font-weight: 700; fill: #ffffff; }
+    .t { font-size: 14.5px; font-weight: 700; fill: #1f3a5f; }
+    .s { font-size: 12.5px; fill: #44546a; }
+    .m { font-family: Menlo, Consolas, monospace; font-size: 12px; fill: #44546a; }
+    .l { font-size: 12px; font-weight: 700; fill: #4a78b5; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a78b5"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="900" height="400" rx="12" fill="#ffffff"/>
+
+  <!-- panels -->
+  <rect x="20" y="20" width="220" height="310" rx="10" fill="#f5f8fc" stroke="#c5d2e3"/>
+  <rect x="20" y="20" width="220" height="38" rx="10" fill="#4a78b5"/>
+  <text x="130" y="45" class="h" text-anchor="middle">SDEE (애플리케이션)</text>
+
+  <rect x="290" y="20" width="380" height="310" rx="10" fill="#f5f8fc" stroke="#c5d2e3"/>
+  <rect x="290" y="20" width="380" height="38" rx="10" fill="#1f3a5f"/>
+  <text x="480" y="45" class="h" text-anchor="middle">SDS — 서명 검증</text>
+
+  <rect x="720" y="20" width="160" height="310" rx="10" fill="#f5f8fc" stroke="#c5d2e3"/>
+  <rect x="720" y="20" width="160" height="38" rx="10" fill="#4a78b5"/>
+  <text x="800" y="45" class="h" text-anchor="middle">SSME</text>
+
+  <!-- SDEE -->
+  <rect x="36" y="80" width="188" height="70" rx="8" fill="#ffffff" stroke="#9fb3cc"/>
+  <text x="50" y="106" class="t">Signed SPDU</text>
+  <text x="50" y="130" class="s">signer · tbsData · signature</text>
+
+  <rect x="36" y="240" width="188" height="70" rx="8" fill="#e6f4ea" stroke="#2e7d4f" stroke-width="1.5"/>
+  <text x="50" y="266" class="t" style="fill:#2e7d4f">검증 결과</text>
+  <text x="50" y="290" class="s">PASS = 위·변조 없음</text>
+
+  <!-- SDS steps -->
+  <rect x="306" y="76" width="348" height="74" rx="8" fill="#ffffff" stroke="#4a78b5" stroke-width="1.5"/>
+  <text x="322" y="100" class="t">① 검증 키 확보</text>
+  <text x="322" y="122" class="s">digest → SSME에서 인증서 조회</text>
+  <text x="322" y="140" class="s">certificate → 포함된 인증서 사용</text>
+
+  <rect x="306" y="170" width="348" height="58" rx="8" fill="#ffffff" stroke="#4a78b5" stroke-width="1.5"/>
+  <text x="322" y="194" class="t">② 해시 재계산</text>
+  <text x="322" y="215" class="m">H( H(tbsData) ‖ H(서명 인증서) )</text>
+
+  <rect x="306" y="248" width="348" height="62" rx="8" fill="#ffffff" stroke="#4a78b5" stroke-width="1.5"/>
+  <text x="322" y="272" class="t">③ ECDSA 검증</text>
+  <text x="322" y="294" class="s">공개키로 signature 검증</text>
+
+  <!-- SSME -->
+  <text x="736" y="96" class="s">· 서명 인증서 조회</text>
+  <text x="736" y="114" class="s">  (HashedId8)</text>
+  <text x="736" y="140" class="s">· 체인 검증 상태</text>
+  <text x="736" y="166" class="s">· 폐기 정보 (CRL)</text>
+
+  <!-- arrows -->
+  <line x1="224" y1="113" x2="304" y2="113" stroke="#4a78b5" stroke-width="2" marker-end="url(#a)"/>
+  <text x="264" y="104" class="l" text-anchor="middle">검증 요청</text>
+  <line x1="480" y1="150" x2="480" y2="168" stroke="#4a78b5" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="480" y1="228" x2="480" y2="246" stroke="#4a78b5" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="306" y1="279" x2="226" y2="279" stroke="#4a78b5" stroke-width="2" marker-end="url(#a)"/>
+  <text x="266" y="270" class="l" text-anchor="middle">결과 반환</text>
+  <line x1="654" y1="113" x2="718" y2="113" stroke="#4a78b5" stroke-width="2" marker-end="url(#a)"/>
+  <text x="686" y="104" class="l" text-anchor="middle">조회</text>
+
+  <!-- note -->
+  <rect x="110" y="348" width="680" height="36" rx="8" fill="#fff4e0"/>
+  <text x="450" y="371" class="t" text-anchor="middle" style="font-size:13.5px; fill:#b26a00">PASS는 위·변조가 없다는 뜻일 뿐 — valid가 되려면 일관성 · 관련성 · 핵심 필드 조건까지 통과해야 한다</text>
+</svg>

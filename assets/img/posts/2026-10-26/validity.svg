@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif">
+  <style>
+    .T { font-size: 22px; font-weight: 800; fill: #1f3a5f; }
+    .k { font-size: 13px; font-weight: 700; fill: #44546a; }
+    .s { font-size: 13px; fill: #44546a; }
+    .c { font-size: 12px; font-weight: 700; fill: #4a78b5; }
+  </style>
+  <rect x="0" y="0" width="900" height="380" rx="12" fill="#ffffff"/>
+
+  <!-- Consistency -->
+  <rect x="20" y="20" width="260" height="262" rx="12" fill="#f5f8fc" stroke="#c5d2e3"/>
+  <text x="40" y="56" class="T">Consistency</text>
+  <text x="40" y="80" class="k">수신자 상태와 무관하게</text>
+  <text x="40" y="98" class="k">SPDU 내용으로 판단</text>
+  <text x="40" y="132" class="s">• 형식 · 서명 · 체인 · 폐기</text>
+  <text x="40" y="156" class="s">• PSID · 생성 시각 · 지역</text>
+  <text x="52" y="174" class="s">(인증서와 대조)</text>
+  <text x="40" y="198" class="s">• 시각 순서 · appExtensions</text>
+  <text x="40" y="222" class="s">• Payload · SSP · Asserted data</text>
+  <rect x="36" y="244" width="228" height="26" rx="13" fill="#e8f0fb"/>
+  <text x="150" y="262" class="c" text-anchor="middle">SPDU ↔ 인증서 / SPDU 내부</text>
+
+  <text x="300" y="158" font-size="26" font-weight="800" fill="#9fb3cc" text-anchor="middle">∧</text>
+
+  <!-- Relevance -->
+  <rect x="320" y="20" width="260" height="262" rx="12" fill="#f5f8fc" stroke="#c5d2e3"/>
+  <text x="340" y="56" class="T">Relevance</text>
+  <text x="340" y="80" class="k">수신자의 현재 상태 기준</text>
+  <text x="340" y="98" class="k">(시각 · 위치 · 수신 기록)</text>
+  <text x="340" y="132" class="s">• Freshness · Future generation</text>
+  <text x="340" y="156" class="s">• Expiry · Location</text>
+  <text x="340" y="180" class="s">• Replay · Certificate expiry</text>
+  <rect x="336" y="244" width="228" height="26" rx="13" fill="#e8f0fb"/>
+  <text x="450" y="262" class="c" text-anchor="middle">SPDU ↔ 수신자 로컬 상태</text>
+
+  <text x="600" y="158" font-size="26" font-weight="800" fill="#9fb3cc" text-anchor="middle">∧</text>
+
+  <!-- Critical Fields -->
+  <rect x="620" y="20" width="260" height="262" rx="12" fill="#f5f8fc" stroke="#c5d2e3"/>
+  <text x="640" y="56" class="T">Critical Fields</text>
+  <text x="640" y="80" class="k">유효성 판단에 필요한 핵심 필드를</text>
+  <text x="640" y="98" class="k">해석 · 지원할 수 없으면 invalid</text>
+  <text x="640" y="132" class="s">• 너무 긴 필드</text>
+  <text x="640" y="156" class="s">• 너무 많은 배열 항목</text>
+  <text x="640" y="180" class="s">• 너무 깊은 중첩</text>
+  <text x="640" y="204" class="s">• 인식할 수 없는 식별자</text>
+  <rect x="636" y="244" width="228" height="26" rx="13" fill="#e8f0fb"/>
+  <text x="750" y="262" class="c" text-anchor="middle">SPDU ↔ 구현체의 해석 능력</text>
+
+  <!-- banner -->
+  <rect x="250" y="306" width="400" height="52" rx="10" fill="#e6f4ea" stroke="#9cc9ab"/>
+  <text x="450" y="340" font-size="22" font-weight="800" fill="#2e7d4f" text-anchor="middle">세 가지를 모두 만족해야 valid</text>
+</svg>
